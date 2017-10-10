@@ -22,7 +22,7 @@ public class ContactDB {
 	private Contact currentContact = new Contact();
 	private String searchPattern = "";
 	private String driver = "com.mysql.jdbc.Driver";
-	private String url = "jdbc:mysql://127.0.0.1:3306/lab7?characterEncoding=utf8";
+	private String url = "jdbc:mysql://127.0.0.1:3306/ip13adresar?characterEncoding=utf8";
 	private String username = "root";
 	private String password = "root";
 	private Connection connection = null;
