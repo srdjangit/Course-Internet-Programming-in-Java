@@ -1,0 +1,71 @@
+<html xmlns = "http://www.w3c.org/1999/xhtml"
+	  xmlns:f = "http://java.sun.com/jsf/core"
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</h:head>
+<body>
+	<h2>Lab 7.1. - JSF 2.0 Adresar</h2>
+	<div id="leftColumn" style="width: 20%; float: left; background-color: #BAA9A0; padding: 10px;">
+		<!-- Tabela za unos novog kontakta -->
+		<h:form>
+		
+			<h:outputLabel>First name: </h:outputLabel><br/>
+			<h:inputText id="firstName" value="#{contactDB.currentContact.firstName}" required="true" requiredMessage=" * Obavezno polje" />
+			<h:message for="firstName" style="color: red;" /><br/>
+			
+			<h:outputLabel>Last name: </h:outputLabel><br/>
+			<h:inputText id="lastName" value="#{contactDB.currentContact.lastName}" required="true" requiredMessage=" * Obavezno polje" />
+			<h:message for="lastName" style="color: red;" /><br/>
+			
+			<h:outputLabel>Address: </h:outputLabel><br/>
+			<h:inputText id="address" value="#{contactDB.currentContact.address}" /><br/>
+			
+			<h:outputLabel>Mobile number: </h:outputLabel><br/>
+			<h:inputText id="mobileNumber" value="#{contactDB.currentContact.mobileNumber}" /><br/>
+			
+			<h:outputLabel>Fixed number: </h:outputLabel><br/>
+			<h:inputText id="fixedNumber" value="#{contactDB.currentContact.fixedNumber}" /><br/>
+			
+			<h:outputLabel>Email: </h:outputLabel><br/>
+			<h:inputText id="email" value="#{contactDB.currentContact.email}" /><br/><br/>
+			
+			<h:commandButton id="createContact" value="Create contact" action="#{contactDB.addContact}" />
+		</h:form>
+	</div>
+	<div id="rightColumn" style="width: 80%; float: left; padding: 10px; background-color: #E0CBC1;">
+		<h:form>
+			<h:dataTable value="#{contactDB.contacts}" var="contact" width="100%" border="1" >
+				<h:column>
+					<f:facet name="header">First name</f:facet>
+					<h:outputLabel value="#{contact.firstName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Last name</f:facet>
+					<h:outputLabel value="#{contact.lastName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Address</f:facet>
+					<h:outputLabel value="#{contact.address}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Mobile</f:facet>
+					<h:outputLabel value="#{contact.mobileNumber}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Fixed</f:facet>
+					<h:outputLabel value="#{contact.fixedNumber}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Email</f:facet>
+					<h:outputLabel value="#{contact.email}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Delete</f:facet>
+					<h:commandLink value="Obriši korisnika" action="#{contactDB.deleteContact(contact.id)}" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</div>
+</body>
+</html>
