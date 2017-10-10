@@ -1,0 +1,75 @@
+<html xmlns = "http://www.w3c.org/1999/xhtml"
+	  xmlns:f = "http://java.sun.com/jsf/core"
+	  xmlns:h = "http://java.sun.com/jsf/html"
+	  xmlns:rich = "http://richfaces.org/rich"
+	  xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</h:head>
+<h:body>
+	<h2>Lab 7.1. - JSF 2.0 Adresar</h2>
+		<!-- Stilovi -->
+		<h:outputStylesheet>
+	        .even-row {
+	        background-color: #FCFFFE;
+	        }
+	 
+	        .odd-row {
+	        background-color: #ECF3FE;
+	        }
+	 
+	        .active-row {
+	        background-color: #FFEBDA !important;
+	        cursor: pointer;
+	        }
+    	</h:outputStylesheet>  
+    	<rich:jQuery selector=".stable tr:odd" query="addClass('odd-row')" />
+   		<rich:jQuery selector=".stable tr:even" query="addClass('even-row')" />
+    	<rich:jQuery selector=".stable tr" event="mouseover" query="jQuery(this).addClass('active-row')" />
+    	<rich:jQuery selector=".stable tr" event="mouseout" query="jQuery(this).removeClass('active-row')" />
+    	<h:outputStylesheet>
+        .rf-dt{
+        width:400px;
+        }
+        .acent{
+        text-align: center;
+        }
+    </h:outputStylesheet>
+		<h:form>
+			<h:panelGrid columnClasses="acent">
+            <rich:dataScroller for="table" maxPages="5" />
+				<rich:dataTable id="table" value="#{contactDB.contacts}" var="contact" rows="5" rowClasses="odd-row, even-row" styleClass="stable" style="width: 100%;">
+					<rich:column sortOrder="ascending" >
+						<f:facet name="header">First name</f:facet>
+						<h:outputText value="#{contact.firstName}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Last name</f:facet>
+						<h:outputText value="#{contact.lastName}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Address</f:facet>
+						<h:outputText value="#{contact.address}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Mobile</f:facet>
+						<h:outputText value="#{contact.mobileNumber}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Fixed</f:facet>
+						<h:outputText value="#{contact.fixedNumber}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{contact.email}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Delete</f:facet>
+						<h:commandLink value="Obriši korisnika" action="#{contactDB.deleteContact(contact.id)}" />
+					</rich:column>
+				</rich:dataTable>
+			</h:panelGrid>
+		</h:form>
+		<a href="noviKontakt.xhtml">Unos novog kontakta</a>
+</h:body>
+</html>

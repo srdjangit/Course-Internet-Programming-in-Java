@@ -1,0 +1,59 @@
+<html xmlns = "http://www.w3c.org/1999/xhtml"
+	  xmlns:f = "http://java.sun.com/jsf/core"
+	  xmlns:h = "http://java.sun.com/jsf/html"
+	  xmlns:rich = "http://richfaces.org/rich"
+	  xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</h:head>
+<h:body>
+	<h2>Lab 7.1. - JSF 2.0 Adresar</h2>
+	
+		<h:form>
+			<h:panelGrid columnClasses="acent">
+            <rich:dataScroller for="table" maxPages="5" />
+				<rich:dataTable id="table" value="#{contactDB.contacts}" var="contact" rows="5">
+					<rich:column sortOrder="ascending" >
+						<f:facet name="header">First name</f:facet>
+						<h:outputText value="#{contact.firstName}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Last name</f:facet>
+						<h:outputText value="#{contact.lastName}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Address</f:facet>
+						<h:outputText value="#{contact.address}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Mobile</f:facet>
+						<h:outputText value="#{contact.mobileNumber}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Fixed</f:facet>
+						<h:outputText value="#{contact.fixedNumber}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{contact.email}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Description</f:facet>
+						<h:outputLabel  value="#{contact.description}" escape="false" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Date of birth</f:facet>
+						<h:outputText value="#{contact.dateOfBirth}">
+							<f:convertDateTime pattern="dd.MM.yyyy" />
+						</h:outputText>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">Delete</f:facet>
+						<h:commandLink value="Obriši korisnika" action="#{contactDB.deleteContact(contact.id)}" />
+					</rich:column>
+				</rich:dataTable>
+			</h:panelGrid>
+		</h:form>
+		<a href="noviKontakt.xhtml">Unos novog kontakta</a>
+</h:body>
+</html>
