@@ -1,0 +1,21 @@
+<html xmlns = "http://www.w3c.org/1999/xhtml"
+	  xmlns:f = "http://java.sun.com/jsf/core"
+	  xmlns:h = "http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</h:head>
+<body>
+	<h1>Login forma</h1>
+	<p>Unesite ispravno korisničko ime i password za pristup sistemu.</p>
+	<h:form>
+		<h:outputLabel>Username: </h:outputLabel><br/>
+		<h:inputText id="username" value="#{userController.currentUser.username}" required="true" requiredMessage=" * Obavezno polje" />
+		<h:message for="username" style="color: red;" /><br/>
+		<h:outputLabel>Password: </h:outputLabel><br/>
+		<h:inputText id="password" value="#{userController.currentUser.password}" required="true" requiredMessage=" * Obavezno polje" />
+		<h:message for="password" style="color: red;" /><br/>
+		<h:commandButton id="createContact" value="Prijavite se na sistem" action="#{userController.login}" />
+	</h:form>
+</body>
+</html>

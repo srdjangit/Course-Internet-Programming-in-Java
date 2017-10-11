@@ -1,0 +1,26 @@
+<html	xmlns="http://www.w3c.org/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<ui:insert name="meta">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	</ui:insert>
+	<title><ui:insert name="title" /></title>
+</h:head>
+<h:body>
+	<h1>IP-16 Mali Oglasi - Moderator </h1>
+	<hr/>
+	<!-- Meni -->
+	<h:form>
+		<h:commandLink value=" Odjava sa sistema" action="#{userController.logout}" /> |
+		 Dobrodošli, <h:outputLabel value="#{userController.loggedUser.username}" style="color: red;" />
+	</h:form>
+	<hr/>
+	<!-- Sadržaj -->
+	<ui:insert name="content" />
+	<!-- Footer -->
+	<hr />
+	<p style="text-align: center;" >Milan Latinović, Internet programiranje, 2017. (All rights reserved)</p>
+</h:body>
+</html>

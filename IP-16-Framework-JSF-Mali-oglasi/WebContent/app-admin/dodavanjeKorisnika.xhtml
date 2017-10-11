@@ -1,0 +1,27 @@
+<ui:composition xmlns = "http://www.w3c.org/1999/xhtml"
+	  			xmlns:f = "http://java.sun.com/jsf/core"
+	  			xmlns:h = "http://java.sun.com/jsf/html"
+	  			xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			template="/WEB-INF/template/templateAdmin.xhtml" >
+
+<ui:define name="meta">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</ui:define>
+	
+<ui:define name="content">
+		<h2>Dodavanje korisnika</h2>
+		<h:form>
+			<h:outputLabel value="Username: " />
+			<h:inputText value="#{userController.newUser.username}" /><br/>
+			<h:outputLabel value="Password: " />
+			<h:inputText value="#{userController.newUser.password}" /><br/>
+			<h:outputLabel value="Role: " />
+			<h:selectOneMenu value="#{userController.newUser.role.id}">
+	            <f:selectItems value="#{roleController.roles}" var="role" itemValue="#{role.id}" itemLabel="#{role.name}" />
+	        </h:selectOneMenu><br/>
+			<h:outputLabel value="Email: " />
+			<h:inputText value="#{userController.newUser.email}" /><br/>
+			<h:commandButton value="Unos novog korisnika" action="#{userController.createUser}"  />
+		</h:form>
+</ui:define>
+</ui:composition>

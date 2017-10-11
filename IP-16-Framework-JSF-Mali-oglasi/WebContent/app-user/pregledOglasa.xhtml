@@ -1,0 +1,24 @@
+<ui:composition xmlns = "http://www.w3c.org/1999/xhtml"
+	  			xmlns:f = "http://java.sun.com/jsf/core"
+	  			xmlns:h = "http://java.sun.com/jsf/html"
+	  			xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			template="/WEB-INF/template/templateUser.xhtml" >
+
+<ui:define name="meta">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</ui:define>
+	
+<ui:define name="content">
+		<h2>Pregled svih oglasa</h2>
+		<h:dataTable value="#{advertiseController.advertises}" var="advertise" width="100%" border="1" >
+				<h:column>
+					<f:facet name="header">Title</f:facet>
+					<h:outputLabel value="#{advertise.title}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
+					<h:outputLabel value="#{advertise.description}" />
+				</h:column>
+			</h:dataTable>
+</ui:define>
+</ui:composition>
