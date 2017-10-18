@@ -22,6 +22,7 @@ Softver:
 * Java Standard Devepment KIT - http://www.oracle.com/technetwork/java/javase/downloads/index.html
 * Apache Tomcat Server - https://tomcat.apache.org/download-90.cgi
 * Eclipse - https://www.eclipse.org/downloads/?
+* ECLIPSE->GIT connector - http://www.eclipse.org/egit/
 
 
 
