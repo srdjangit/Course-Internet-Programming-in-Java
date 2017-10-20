@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response.StatusType;
  */
 public class RESTMain {
 	
-	public static final String REST_URL = "http://www.holidaywebservice.com/Holidays/HolidayService.asmx/GetHolidaysForYear?countryCode=US&year=2017";
+	public static final String REST_URL  = "http://www.holidaywebservice.com/Holidays/HolidayService.asmx/GetHolidaysForYear?countryCode=US&year=2017";
 	public static final int OK_STATUS = Response.Status.OK.getStatusCode();
 	
 	/**
