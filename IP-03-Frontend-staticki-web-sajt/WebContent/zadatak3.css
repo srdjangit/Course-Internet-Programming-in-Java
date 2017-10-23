@@ -2,28 +2,31 @@ p {
 	line-height: 1em; 
 }
 h1, h2, h3, h4 {
-    color: RED;
+    color: red;
 	font-weight: normal;
 	line-height: 1.1em;
 	margin: 0 0 .5em 0;
 	/HOME
 }
-h1 { font-size: 1.7em; }
+h1 { font-size: 2.7em; }
 h2 { font-size: 3.5em; }
 a {
-	color: red;
+	color: #408080;
 	text-decoration: none;
+	/internet programiranje
 }
 	a:hover,
 	a:active{ text-decoration: underline; }
 
 body{
-    font-family: arial; font-size: 80%; line-height: 1.2em; width: 100%; margin: 0; background: #eee;
+    font-family: arial; font-size: 90%; line-height: 1.2em; width: 100%; margin: 3; background: #b7b7ff;
+    /velicina svih fontova odjednom,polozaj buttona,background boja cijele pozadine
 }
-#page{ margin: 20px; }
+#page{ margin: 50px; }
+/margine
 
 #logo{
-	width: 35%;
+	width: 55%;
 	margin-top: 5px;
 	font-family: georgia;
 	display: inline-block;
@@ -46,7 +49,7 @@ body{
 				/button
 			}
 			#nav ul li a:hover{
-				background-color: #8080c0;
+				background-color: #c0c0c0;
 				box-shadow: 0px 1px 1px #666;
 			}
 			#nav ul li a:active{ background-color: #00ff00; }
@@ -64,8 +67,9 @@ body{
 	#footer p{
 		text-align: right;
 		text-transform: uppercase;
-		font-size: 80%;
+		font-size: 70%;
 		color:yelow;
+		/velicina fonta gosp
 	}
 
 #content,
