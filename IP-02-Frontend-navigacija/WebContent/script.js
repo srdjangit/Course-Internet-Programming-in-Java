@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   function toggleSidebar() {
     $(".button").toggleClass("active");
-    $("main").toggleClass("move-to-left");
+    $(".main").toggleClass("move-to-left");
     $(".sidebar-item").toggleClass("active");
   }
 
