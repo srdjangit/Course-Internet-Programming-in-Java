@@ -1,3 +1,7 @@
+
+
+
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic|PT+Serif:400,400italic,700,700italic);
 html {
   box-sizing: border-box;
@@ -407,7 +411,7 @@ main [class*="card-"] {
   color: inherit;
 }
 [class*="card-"] .ribbon-buy {
-  color: #fff;
+  color: #0000ff;
 }
 
 /*== Card - Footer === */
