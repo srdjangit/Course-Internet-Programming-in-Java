@@ -8,7 +8,7 @@ h1, h2, h3, h4 {
 	margin: 0 0 .5em 0;
 	/HOME
 }
-h1 { font-size: 2.7em; }
+h1 { font-size: 3.7em; }
 h2 { font-size: 3.5em; }
 a {
 	color: #408080;
@@ -30,27 +30,30 @@ body{
 	width: 55%;
 	margin-top: 100px;
 	font-family: georgia;
-	display: inline-block;
+		display: inline-block;
 }
 #nav{
-	width: 60%;
-	display: inline-block;
-	text-align: right;
+	width: 70%;
+		display: inline-block;
+			text-align: right;
 	float: right;
+	/polozaj buttona
 }
 	#nav ul{}
 		#nav ul li{
 			display: inline-block;
-			height: 62px;
-		}
+			height: 100px;
+					}
 			#nav ul li a{
-				padding: 20px;
-				background: BLUE;
-				color: white;
+				padding: 30px;
+				background: green;
+				color: red;
+				border-radius: 25px;
 				/button
 			}
 			#nav ul li a:hover{
-				background-color: #c0c0c0;
+				background-color: #ffff80;
+				/boja dugmeta kada stanemo na njega
 				box-shadow: 0px 1px 1px #666;
 			}
 			#nav ul li a:active{ background-color: #00ff00; }
