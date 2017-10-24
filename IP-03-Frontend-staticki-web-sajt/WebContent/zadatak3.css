@@ -16,10 +16,11 @@ a {
 	/internet programiranje
 }
 	a:hover,
+		/kada predjemo misem
 	a:active{ text-decoration: underline; }
 
 body{
-    font-family: arial; font-size: 90%; line-height: 1.2em; width: 100%; margin: 3; background: #b7b7ff;
+    font-family: arial; font-size: 90%; line-height: 1.2em; width: 100%; margin: 3; background: #d3d3d3;
     /velicina svih fontova odjednom,polozaj buttona,background boja cijele pozadine
 }
 #page{ margin: 50px; }
@@ -27,7 +28,7 @@ body{
 
 #logo{
 	width: 55%;
-	margin-top: 5px;
+	margin-top: 100px;
 	font-family: georgia;
 	display: inline-block;
 }
