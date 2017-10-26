@@ -23,9 +23,9 @@ public class DatabaseOperation {
 	public static Connection getConnection(){  
 		try{  
 			Class.forName("com.mysql.jdbc.Driver");     
-			String db_url ="jdbc:mysql://localhost:3306/students",
+			String db_url ="jdbc:mysql://localhost:3306/student",
 					db_userName = "root",
-					db_password = "root";
+					db_password = "";
 			connObj = DriverManager.getConnection(db_url,db_userName,db_password);  
 		} catch(Exception sqlException) {  
 			sqlException.printStackTrace();
@@ -46,7 +46,12 @@ public class DatabaseOperation {
 				stuObj.setEmail(resultSetObj.getString("student_email"));  
 				stuObj.setPassword(resultSetObj.getString("student_password"));  
 				stuObj.setGender(resultSetObj.getString("student_gender"));  
-				stuObj.setAddress(resultSetObj.getString("student_address"));  
+				stuObj.setAddress(resultSetObj.getString("student_address")); 
+				stuObj.setGodina_studija(resultSetObj.getString("godina_studija")); 
+				stuObj.setBudzetski_student(resultSetObj.getInt("budzetski_student")); 
+				stuObj.setStudentski_racun(resultSetObj.getString("studentski_racun")); 
+						
+				
 				studentsList.add(stuObj);  
 			}   
 			System.out.println("Total Records Fetched: " + studentsList.size());
@@ -62,12 +67,17 @@ public class DatabaseOperation {
 		int saveResult = 0;
 		String navigationResult = "";
 		try {      
-			pstmt = getConnection().prepareStatement("insert into student_record (student_name, student_email, student_password, student_gender, student_address) values (?, ?, ?, ?, ?)");			
+			pstmt = getConnection().prepareStatement("insert into student_record (student_name, student_email, student_password, student_gender, student_address,godina_studija,budzetski_student,studentski_racun) values (?, ?, ?, ?, ?,?,?,?)");			
 			pstmt.setString(1, newStudentObj.getName());
 			pstmt.setString(2, newStudentObj.getEmail());
 			pstmt.setString(3, newStudentObj.getPassword());
 			pstmt.setString(4, newStudentObj.getGender());
 			pstmt.setString(5, newStudentObj.getAddress());
+			pstmt.setString(6, newStudentObj.getGodina_studija());
+			pstmt.setInt(7, newStudentObj.getBudzetski_student());
+			pstmt.setString(8, newStudentObj.getStudentski_racun());
+			
+			
 			saveResult = pstmt.executeUpdate();
 			connObj.close();
 		} catch(Exception sqlException) {
@@ -101,6 +111,13 @@ public class DatabaseOperation {
 				editRecord.setGender(resultSetObj.getString("student_gender"));
 				editRecord.setAddress(resultSetObj.getString("student_address"));
 				editRecord.setPassword(resultSetObj.getString("student_password")); 
+				editRecord.setGodina_studija(resultSetObj.getString("godina_studija")); 
+				editRecord.setBudzetski_student(resultSetObj.getInt("budzetski_student"));
+				editRecord.setStudentski_racun(resultSetObj.getString("studentski_racun")); 
+				
+				
+				
+				
 			}
 			sessionMapObj.put("editRecordObj", editRecord);
 			connObj.close();
@@ -113,13 +130,19 @@ public class DatabaseOperation {
 
 	public static String updateStudentDetailsInDB(StudentBean updateStudentObj) {
 		try {
-			pstmt = getConnection().prepareStatement("update student_record set student_name=?, student_email=?, student_password=?, student_gender=?, student_address=? where student_id=?");    
+			pstmt = getConnection().prepareStatement("update student_record set student_name=?, student_email=?, student_password=?, student_gender=?, student_address=?,godina_studija=?,budzetski_student=?,studentski_racun=? where student_id=?");    
 			pstmt.setString(1,updateStudentObj.getName());  
 			pstmt.setString(2,updateStudentObj.getEmail());  
 			pstmt.setString(3,updateStudentObj.getPassword());  
 			pstmt.setString(4,updateStudentObj.getGender());  
 			pstmt.setString(5,updateStudentObj.getAddress());  
-			pstmt.setInt(6,updateStudentObj.getId());  
+			pstmt.setString(6,updateStudentObj.getGodina_studija()); 
+			pstmt.setInt(7,updateStudentObj.getBudzetski_student()); 
+			pstmt.setString(8,updateStudentObj.getStudentski_racun());
+			pstmt.setInt(9,updateStudentObj.getId()); 
+			
+			
+			
 			pstmt.executeUpdate();
 			connObj.close();			
 		} catch(Exception sqlException) {

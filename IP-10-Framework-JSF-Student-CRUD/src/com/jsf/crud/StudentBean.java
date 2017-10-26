@@ -17,6 +17,9 @@ public class StudentBean {
 	private String password;  
 	private String gender;  
 	private String address;
+	private String godina_studija;
+	private int budzetski_student;
+	private String studentski_racun;
 
 	public ArrayList<StudentBean>studentsListFromDB;
 
@@ -67,6 +70,36 @@ public class StudentBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}  
+	
+	public String getGodina_studija() {
+		return godina_studija;
+	}
+
+	public void setGodina_studija(String godina_studija) {
+		this.godina_studija = godina_studija;
+	}  
+	
+		
+	public int getBudzetski_student() {
+		return budzetski_student;
+	}
+
+	public void setBudzetski_student(int budzetski_student) {
+		this.budzetski_student = budzetski_student;
+	} 
+	
+	
+	public String getStudentski_racun() {
+		return studentski_racun;
+	}
+
+	public void setStudentski_racun(String studentski_racun) {
+		this.studentski_racun = studentski_racun;
+	} 
+	
+	
+	
+	
 	
 	
 	@PostConstruct

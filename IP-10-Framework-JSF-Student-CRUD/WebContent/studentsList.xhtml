@@ -45,6 +45,26 @@
                 <f:facet name="header">Adresa</f:facet>
                 <h:outputText value="#{student.address}" />
             </h:column>
+            
+            
+            <h:column>
+                <f:facet name="header">Godina studija</f:facet>
+                <h:outputText value="#{student.godina_studija}" />
+            </h:column>
+            
+             <h:column>
+                <f:facet name="header">Budzet</f:facet>
+                <h:outputText value="#{student.budzetski_student}" />
+            </h:column>
+            
+            
+             <h:column>
+                <f:facet name="header">Racun</f:facet>
+                <h:outputText value="#{student.studentski_racun}" />
+            </h:column>
+            
+            
+            
             <h:column>
                 <f:facet name="header">Ažuriranje</f:facet>
                 <h:commandButton action="#{studentBean.editStudentRecord(student.id)}" value="Ažuriraj" class="btn btn-primary" />
