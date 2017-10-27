@@ -18,9 +18,9 @@ public class UserController {
 	private User currentUser = new User();
 	private User loggedUser = new User();
 	private String driver = "com.mysql.jdbc.Driver";
-	private String url = "jdbc:mysql://127.0.0.1:3306/ip15?characterEncoding=utf8";
+	private String url = "jdbc:mysql://localhost:3306/ip15";
 	private String username = "root";
-	private String password = "root";
+	private String password = "";
 	private Connection connection = null;
 	private PreparedStatement ps = null;
 	private String SELECT_LOGIN = "SELECT * FROM users WHERE username = ? AND password = ?";
